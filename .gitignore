@@ -1,0 +1,18 @@
+# Environment & credentials
+.env
+.env.*
+*.pem
+*.key
+
+# OS & editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+
+# Dependencies & build/deploy artifacts
+node_modules/
+.vercel/
+
+# Raw source photos in root (already copied to prototype/assets/products/)
+/WhatsApp Image *.jpeg

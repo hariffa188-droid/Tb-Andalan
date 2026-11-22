@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tb. Andalan Bogor — Supplier Bahan Bangunan</title>
+<meta name="description" content="Tb. Andalan Bogor, supplier bahan bangunan harga grosir di Kemang–Parung: Versaboard, Gyproc, mortar MU, GRC Superplank, cat anti bocor, dan lainnya.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Slab:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=5">
+</head>
+<body>
+
+<section class="hero" id="heroSection">
+  <div class="hero-slides" id="heroSlides" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="container">
+    <div>
+      <span class="eyebrow">SUPPLIER BAHAN BANGUNAN · BOGOR</span>
+      <h1>Material Bangunan <em>Andalan</em><br>untuk Setiap Proyek Anda</h1>
+      <p>Mortar instan, gypsum, papan GRC & kalsium silikat, cat anti bocor hingga genteng metal — harga grosir untuk rumah, toko, dan kontraktor.</p>
+      <div class="hero-cta">
+        <a href="katalog.html" class="btn btn-gold">Lihat Katalog →</a>
+        <a href="#proyek" class="btn btn-outline">Minta Penawaran Proyek</a>
+      </div>
+      <div class="hero-stats">
+        <div><b id="statProd">40+</b><span>Produk di katalog</span></div>
+        <div><b id="statBrand">19</b><span>Merek terpercaya</span></div>
+        <div><b>4.8★</b><span>Rating pelanggan</span></div>
+      </div>
+    </div>
+    <div class="hero-logo"><img src="assets/logo.jpg" alt="Tb. Andalan"></div>
+  </div>
+  <div class="hero-controls" id="heroControls" aria-label="Kontrol slider hero">
+    <button type="button" class="hero-nav-btn" id="heroPrev" aria-label="Slide sebelumnya">‹</button>
+    <div class="hero-dots" id="heroDots" role="tablist" aria-label="Pilih slide"></div>
+    <button type="button" class="hero-nav-btn" id="heroNext" aria-label="Slide berikutnya">›</button>
+  </div>
+</section>
+
+<div class="channels">
+  <div class="container" id="channelStrip">
+    <span class="lbl">Belanja juga di:</span>
+  </div>
+</div>
+
+<section class="section" id="kategori">
+  <div class="container">
+    <div class="section-head">
+      <div><h2>Kategori Produk</h2><p>Pilih kategori untuk melihat katalog lengkap</p></div>
+      <a class="link-gold" href="katalog.html">Semua produk →</a>
+    </div>
+    <div class="cats" id="cats"></div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="section-head">
+      <div><h2>Produk Terlaris</h2><p>Klik produk untuk detail, atau tambahkan ke daftar penawaran</p></div>
+      <a class="link-gold" href="katalog.html">Buka katalog →</a>
+    </div>
+    <div class="grid" id="featured"></div>
+  </div>
+</section>
+
+<section class="section" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:40px 0">
+  <div class="container">
+    <p style="text-align:center;color:var(--muted);margin-bottom:16px;font-weight:600;letter-spacing:.08em;font-size:.8rem">MEREK YANG KAMI SEDIAKAN</p>
+    <div class="brand-strip" id="brands"></div>
+  </div>
+</section>
+
+<section class="section np3d-section" id="studio-cat">
+  <div class="container">
+    <div class="np3d-studio">
+      <!-- Sidebar Kiri: Palet Warna, Harga TikTok Shop, & Kontrol 3D -->
+      <aside class="np3d-sidebar">
+        <div class="np3d-brand-head">
+          <span class="np3d-badge"><i></i>STUDIO TINTING 3D</span>
+          <h2>NIPPON PAINT · <em>VINILEX</em></h2>
+          <p>Uji Warna Cat 3D Interactive · Mesin Tinting Original</p>
+        </div>
+
+        <div>
+          <span class="np3d-label">Color Tinting Palette</span>
+          <div class="np3d-swatches" id="np3dSwatches">
+            <button type="button" data-hex="#B82937" data-name="Crimson Red" data-code="NP R 1357A" class="np3d-swatch active" style="background:#B82937;color:#fff">
+              <b>Crimson Red</b><small>NP R 1357A</small>
+            </button>
+            <button type="button" data-hex="#8EC8D8" data-name="Ocean Breeze" data-code="NP BGG 1682P" class="np3d-swatch" style="background:#8EC8D8;color:#0f172a">
+              <b>Ocean Breeze</b><small>NP BGG 1682P</small>
+            </button>
+            <button type="button" data-hex="#8DAE8D" data-name="Emerald Sage" data-code="NP BGG 1621D" class="np3d-swatch" style="background:#8DAE8D;color:#0f172a">
+              <b>Emerald Sage</b><small>NP BGG 1621D</small>
+            </button>
+            <button type="button" data-hex="#F3B745" data-name="Marigold Sun" data-code="NP YO 1145D" class="np3d-swatch" style="background:#F3B745;color:#0f172a">
+              <b>Marigold Sun</b><small>NP YO 1145D</small>
+            </button>
+            <button type="button" data-hex="#B69EC9" data-name="Royal Lavender" data-code="NP PB 1420T" class="np3d-swatch" style="background:#B69EC9;color:#0f172a">
+              <b>Royal Lavender</b><small>NP PB 1420T</small>
+            </button>
+            <button type="button" data-hex="#F8FAFC" data-name="Brilliant White" data-code="NP OW 1001" class="np3d-swatch" style="background:#F8FAFC;color:#0f172a">
+              <b>Brilliant White</b><small>NP OW 1001</small>
+            </button>
+          </div>
+        </div>
+
+        <div class="np3d-price-panel">
+          <div class="np3d-price-main">Rp 145.000 <span>/ 5 Kg</span></div>
+          <div class="np3d-price-sub">(TikTok Shop Mall · TB Andalan)</div>
+          <div class="np3d-price-alt">Rp 665.000 / 25 Kg</div>
+          <a href="https://vt.tiktok.com/ZSsd5ALMH/?page=Mall&utm_campaign=client_share&utm_source=whatsapp&share_app_id=1180" target="_blank" rel="noopener noreferrer" class="np3d-btn-tt">
+            🛒 Beli di TikTok Shop
+          </a>
+          <button type="button" class="np3d-btn-wa" onclick="showNp3dOrderModal('Nippon Paint Vinilex 5 Kg')">
+            💬 Tanya via WhatsApp
+          </button>
+        </div>
+
+        <div class="np3d-interactions">
+          <span class="np3d-label" style="margin-bottom:2px">Live 3D Interactions</span>
+          <button type="button" class="np3d-btn-3d" id="np3dSpinBtn">⏸ Putar Otomatis</button>
+          <button type="button" class="np3d-btn-3d" id="np3dResetBtn">↻ Reset View</button>
+          <button type="button" class="np3d-btn-3d" id="np3dFlipBtn">📄 Lihat Spek Belakang</button>
+        </div>
+      </aside>
+
+      <!-- Panggung 3D Kanan + Pedestal + Floating HUD -->
+      <div class="np3d-stage" id="np3dStage">
+        <div class="np3d-canvas" id="np3dCanvas" aria-label="Model 3D ember pail Nippon Paint Vinilex"></div>
+        <div class="np3d-hud-top">
+          <span class="np3d-pill">↻ Drag to Rotate 3D · Scroll to Zoom</span>
+          <div class="np3d-hud-actions">
+            <button type="button" class="np3d-hud-btn" id="np3dWireBtn" title="Mode Wireframe">Wireframe</button>
+            <button type="button" class="np3d-hud-btn" id="np3dFullBtn" title="Layar Penuh">⛶</button>
+          </div>
+        </div>
+        <div class="np3d-hud-bot">
+          <span class="np3d-pill np3d-hide-m">100% Mesin Tinting Original</span>
+          <span class="np3d-pill" id="np3dColorCode"><i class="np3d-dot" id="np3dDot" style="background:#B82937"></i><span id="np3dStageColor">Crimson Red (NP R 1357A)</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="np3d-products">
+      <div class="np3d-prod">
+        <div>
+          <small>Eksterior Premium</small>
+          <h3>Weatherbond Solareflect</h3>
+          <p>Menurunkan suhu ruangan hingga 5°C, perlindungan cuaca ekstrem &amp; anti lumut 8 tahun.</p>
+        </div>
+        <div class="np3d-prod-foot">
+          <b>Rp 285.000 <span>/ 2.5L</span></b>
+          <button type="button" class="btn btn-gold" onclick="showNp3dOrderModal('Nippon Weatherbond Solareflect 2.5L')">Pesan</button>
+        </div>
+      </div>
+
+      <div class="np3d-prod">
+        <div>
+          <small>Interior Legendaris</small>
+          <h3>Vinilex Emulsion</h3>
+          <p>Cat dinding interior terpopuler, tahan sikat 1.200 kali, warna tahan lama &amp; anti jamur.</p>
+        </div>
+        <div class="np3d-prod-foot">
+          <b>Rp 165.000 <span>/ 5Kg</span></b>
+          <button type="button" class="btn btn-gold" onclick="showNp3dOrderModal('Nippon Vinilex Emulsion 5Kg')">Pesan</button>
+        </div>
+      </div>
+
+      <div class="np3d-prod">
+        <div>
+          <small>Washable &amp; Luxury</small>
+          <h3>Spot-less Plus</h3>
+          <p>Noda kopi, saus, dan coretan krayon mudah dibersihkan tanpa merusak warna cat.</p>
+        </div>
+        <div class="np3d-prod-foot">
+          <b>Rp 245.000 <span>/ 2.5L</span></b>
+          <button type="button" class="btn btn-gold" onclick="showNp3dOrderModal('Nippon Spot-less Plus 2.5L')">Pesan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="np3d-modal" id="np3dOrderModal" onclick="if(event.target===this)closeNp3dOrderModal()">
+  <div class="np3d-modal-box">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+      <span class="np3d-badge"><i></i>PESAN CAT TINTING</span>
+      <button type="button" onclick="closeNp3dOrderModal()" style="color:#aaa;font-size:1.2rem;padding:4px 8px">✕</button>
+    </div>
+    <h3 id="np3dModalTitle" style="font-size:1.25rem;margin-bottom:4px">Nippon Paint</h3>
+    <p style="font-size:.82rem;color:#bbb;margin-bottom:16px">Warna terpilih: <b id="np3dModalColor" style="color:var(--gold-light)">Crimson Red (NP R 1357A)</b></p>
+    <div class="field">
+      <label for="np3dCustName">Nama Pemesan / Kontraktor</label>
+      <input type="text" id="np3dCustName" placeholder="Contoh: Bpk. Budi Santoso">
+    </div>
+    <div class="field">
+      <label for="np3dCustQty">Jumlah Kaleng / Pail</label>
+      <input type="number" id="np3dCustQty" value="2" min="1">
+    </div>
+    <div class="np3d-feedback" id="np3dModalFeedback"></div>
+    <div style="display:flex;gap:10px;margin-top:16px">
+      <button type="button" class="btn btn-gold" style="flex:1" onclick="submitNp3dOrder()">Kirim via WhatsApp</button>
+      <button type="button" class="btn btn-outline" onclick="closeNp3dOrderModal()">Tutup</button>
+    </div>
+  </div>
+</div>
+
+<section class="section price-section" id="katalog-harga">
+  <div class="container">
+    <div class="price-head">
+      <div>
+        <span class="eyebrow" style="color:var(--gold-dark);margin-bottom:8px">ETALASE RESMI · TIKTOK SHOP TB ANDALAN</span>
+        <h2>Katalog &amp; Daftar Harga Resmi</h2>
+        <p>Referensi harga produk unggulan dari etalase TikTok Shop TB Andalan. Cek promo flash sale &amp; gratis ongkir langsung di etalase resmi kami.</p>
+      </div>
+      <a href="https://vt.tiktok.com/ZSsd5ALMH/?page=Mall&utm_campaign=client_share&utm_source=whatsapp&share_app_id=1180" target="_blank" rel="noopener noreferrer" class="btn-tiktok-mall">
+        <span>🛍️ Buka Etalase TikTok Shop</span>
+      </a>
+    </div>
+
+    <div class="price-grid">
+      <article class="price-card">
+        <div>
+          <span class="price-badge">Terlaris · Tinting Ready</span>
+          <h3>Nippon Paint Vinilex 5 Kg</h3>
+          <p class="price-desc">Cat tembok interior &amp; eksterior anti-jamur, tersedia ribuan pilihan warna mesin tinting.</p>
+        </div>
+        <div>
+          <div class="price-box">
+            <span class="price-label">Harga Spesial TikTok Shop &amp; Online</span>
+            <div class="price-value">Mulai dari Rp 145.000 <span class="price-unit">/ pail</span></div>
+          </div>
+          <div class="price-actions">
+            <a href="https://vt.tiktok.com/ZSsd5ALMH/?page=Mall&utm_campaign=client_share&utm_source=whatsapp&share_app_id=1180" target="_blank" rel="noopener noreferrer" class="btn-buy-tt">Beli di TikTok Shop</a>
+            <button type="button" class="btn-wa-ask" onclick="tanyaProdukWA('Nippon Paint Vinilex 5 Kg')">Tanya Stok WA</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="price-card">
+        <div>
+          <span class="price-badge">Ukuran Proyek · Hemat</span>
+          <h3>Nippon Paint Vinilex 25 Kg</h3>
+          <p class="price-desc">Kemasan proyek untuk pengecatan seluruh rumah, daya sebar luas &amp; warna tahan lama.</p>
+        </div>
+        <div>
+          <div class="price-box">
+            <span class="price-label">Harga Spesial TikTok Shop &amp; Online</span>
+            <div class="price-value">Mulai dari Rp 665.000 <span class="price-unit">/ pail</span></div>
+          </div>
+          <div class="price-actions">
+            <a href="https://vt.tiktok.com/ZSsd5ALMH/?page=Mall&utm_campaign=client_share&utm_source=whatsapp&share_app_id=1180" target="_blank" rel="noopener noreferrer" class="btn-buy-tt">Beli di TikTok Shop</a>
+            <button type="button" class="btn-wa-ask" onclick="tanyaProdukWA('Nippon Paint Vinilex 25 Kg')">Tanya Stok WA</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="price-card">
+        <div>
+          <span class="price-badge">Anti Bocor</span>
+          <h3>Aquaproof Anti Bocor 4 Kg</h3>
+          <p class="price-desc">Cat pelapis anti bocor elastis kedap air untuk dak beton, talang, wuwungan, dan dinding luar.</p>
+        </div>
+        <div>
+          <div class="price-box">
+            <span class="price-label">Harga Spesial TikTok Shop &amp; Online</span>
+            <div class="price-value">Mulai dari Rp 215.000 <span class="price-unit">/ galon</span></div>
+          </div>
+          <div class="price-actions">
+            <a href="https://vt.tiktok.com/ZSsd5ALMH/?page=Mall&utm_campaign=client_share&utm_source=whatsapp&share_app_id=1180" target="_blank" rel="noopener noreferrer" class="btn-buy-tt">Beli di TikTok Shop</a>
+            <button type="button" class="btn-wa-ask" onclick="tanyaProdukWA('Aquaproof Anti Bocor 4 Kg')">Tanya Stok WA</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="price-card">
+        <div>
+          <span class="price-badge">Material Utama</span>
+          <h3>Semen Tiga Roda 50 Kg</h3>
+          <p class="price-desc">Semen Portland berkualitas tinggi untuk struktur beton, pasangan bata, plesteran, dan acian.</p>
+        </div>
+        <div>
+          <div class="price-box">
+            <span class="price-label">Harga Spesial TikTok Shop &amp; Online</span>
+            <div class="price-value">Mulai dari Rp 68.000 <span class="price-unit">/ sak</span></div>
+          </div>
+          <div class="price-actions">
+            <a href="https://vt.tiktok.com/ZSsd5ALMH/?page=Mall&utm_campaign=client_share&utm_source=whatsapp&share_app_id=1180" target="_blank" rel="noopener noreferrer" class="btn-buy-tt">Beli di TikTok Shop</a>
+            <button type="button" class="btn-wa-ask" onclick="tanyaProdukWA('Semen Tiga Roda 50 Kg')">Tanya Stok WA</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="price-card">
+        <div>
+          <span class="price-badge">Plumbing</span>
+          <h3>Pipa PVC Rucika AW (4m)</h3>
+          <p class="price-desc">Pipa air bersih bertekanan standar SNI, tebal, kuat, dan tahan lama untuk instalasi rumah &amp; proyek.</p>
+        </div>
+        <div>
+          <div class="price-box">
+            <span class="price-label">Harga Spesial TikTok Shop &amp; Online</span>
+            <div class="price-value">Mulai dari Rp 42.000 <span class="price-unit">/ batang</span></div>
+          </div>
+          <div class="price-actions">
+            <a href="https://vt.tiktok.com/ZSsd5ALMH/?page=Mall&utm_campaign=client_share&utm_source=whatsapp&share_app_id=1180" target="_blank" rel="noopener noreferrer" class="btn-buy-tt">Beli di TikTok Shop</a>
+            <button type="button" class="btn-wa-ask" onclick="tanyaProdukWA('Pipa PVC Rucika AW 4m')">Tanya Stok WA</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="price-card">
+        <div>
+          <span class="price-badge">Finishing Lantai</span>
+          <h3>Keramik Lantai &amp; Dinding 40×40</h3>
+          <p class="price-desc">Pilihan motif minimalis glossy &amp; matte presisi tinggi untuk ruang tamu, teras, dan kamar mandi.</p>
+        </div>
+        <div>
+          <div class="price-box">
+            <span class="price-label">Harga Spesial TikTok Shop &amp; Online</span>
+            <div class="price-value">Mulai dari Rp 58.000 <span class="price-unit">/ dus</span></div>
+          </div>
+          <div class="price-actions">
+            <a href="https://vt.tiktok.com/ZSsd5ALMH/?page=Mall&utm_campaign=client_share&utm_source=whatsapp&share_app_id=1180" target="_blank" rel="noopener noreferrer" class="btn-buy-tt">Beli di TikTok Shop</a>
+            <button type="button" class="btn-wa-ask" onclick="tanyaProdukWA('Keramik Lantai & Dinding 40x40')">Tanya Stok WA</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="price-card">
+        <div>
+          <span class="price-badge">Waterproof 2-in-1</span>
+          <h3>Nippon Paint Elastex 4 Kg</h3>
+          <p class="price-desc">Cat pelapis anti bocor elastis sekaligus cat dasar alkali resisting untuk dinding eksterior.</p>
+        </div>
+        <div>
+          <div class="price-box">
+            <span class="price-label">Harga Spesial TikTok Shop &amp; Online</span>
+            <div class="price-value">Mulai dari Rp 185.000 <span class="price-unit">/ galon</span></div>
+          </div>
+          <div class="price-actions">
+            <a href="https://vt.tiktok.com/ZSsd5ALMH/?page=Mall&utm_campaign=client_share&utm_source=whatsapp&share_app_id=1180" target="_blank" rel="noopener noreferrer" class="btn-buy-tt">Beli di TikTok Shop</a>
+            <button type="button" class="btn-wa-ask" onclick="tanyaProdukWA('Nippon Paint Elastex 4 Kg')">Tanya Stok WA</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="price-card">
+        <div>
+          <span class="price-badge">Perkakas &amp; Aksesoris</span>
+          <h3>Paket Kuas Roll &amp; Bak Cat Pro</h3>
+          <p class="price-desc">Bulu roll halus tidak mudah rontok, hasil pengecatan rata sempurna tanpa bekas garis kuas.</p>
+        </div>
+        <div>
+          <div class="price-box">
+            <span class="price-label">Harga Spesial TikTok Shop &amp; Online</span>
+            <div class="price-value">Mulai dari Rp 32.500 <span class="price-unit">/ set</span></div>
+          </div>
+          <div class="price-actions">
+            <a href="https://vt.tiktok.com/ZSsd5ALMH/?page=Mall&utm_campaign=client_share&utm_source=whatsapp&share_app_id=1180" target="_blank" rel="noopener noreferrer" class="btn-buy-tt">Beli di TikTok Shop</a>
+            <button type="button" class="btn-wa-ask" onclick="tanyaProdukWA('Paket Kuas Roll & Bak Cat Pro')">Tanya Stok WA</button>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <p class="price-disclaimer">
+      *Harga dapat berubah mengikuti promo flash sale, voucher diskon, dan gratis ongkir di etalase resmi <a href="https://vt.tiktok.com/ZSsd5ALMH/?page=Mall&utm_campaign=client_share&utm_source=whatsapp&share_app_id=1180" target="_blank" rel="noopener noreferrer">TikTok Shop TB Andalan</a>.
+    </p>
+  </div>
+</section>
+
+<section class="section" id="kalkulator">
+  <div class="container two">
+    <div class="panel">
+      <h3>Kalkulator Material</h3>
+      <p class="sub">Perkiraan kebutuhan material sebelum minta penawaran.</p>
+      <div class="field">
+        <label for="calcType">Jenis pekerjaan</label>
+        <select id="calcType" onchange="calc()">
+          <option value="gypsum">Plafon gypsum (papan 120×240)</option>
+          <option value="mu380">Pasang bata ringan dengan MU 380 / DM-938</option>
+          <option value="aquaproof">Pelapis anti bocor dak (Aquaproof, 2 lapis)</option>
+        </select>
+      </div>
+      <div class="row">
+        <div class="field"><label for="pl">Panjang (m)</label><input id="pl" type="number" value="4" min="0" oninput="calc()"></div>
+        <div class="field"><label for="lb">Lebar / Tinggi (m)</label><input id="lb" type="number" value="3" min="0" oninput="calc()"></div>
+      </div>
+      <div class="result" id="calcResult"></div>
+      <p style="font-size:.78rem;color:var(--muted);margin-top:8px">*Estimasi kasar. Tim kami bantu hitung detail via WhatsApp.</p>
+    </div>
+    <div class="panel why">
+      <h3 style="color:#fff">Kenapa Pilih <span style="color:var(--gold-light)">Tb. Andalan?</span></h3>
+      <ul>
+        <li><i>01</i><div><b>Harga Grosir</b><span>Makin banyak beli, makin hemat — cocok untuk tukang, toko & kontraktor.</span></div></li>
+        <li><i>02</i><div><b>Siap Antar</b><span>Pengiriman langsung ke lokasi proyek di area Bogor & sekitarnya.</span></div></li>
+        <li><i>03</i><div><b>Merek Original</b><span>Versaboard, Gyproc, MU, Sika, Aquaproof, Wavin, Toho & lainnya.</span></div></li>
+        <li><i>04</i><div><b>Konsultasi Gratis</b><span>Bingung pilih material? Tanya via WhatsApp, kami bantu.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="proyek" style="background:#fff;border-top:1px solid var(--line)">
+  <div class="container two">
+    <div>
+      <span class="eyebrow" style="color:var(--gold-dark)">UNTUK KONTRAKTOR & PROYEK</span>
+      <h2 style="font-size:1.9rem;margin-bottom:12px">Butuh material dalam jumlah besar?</h2>
+      <p style="color:var(--muted);margin-bottom:18px">Kirim daftar kebutuhan proyek Anda, tim kami akan memberikan penawaran harga khusus secepatnya.</p>
+      <ul class="info-list">
+        <li><b style="color:var(--gold-dark)">—</b> Harga khusus partai besar</li>
+        <li><b style="color:var(--gold-dark)">—</b> Pengiriman bertahap sesuai progres proyek</li>
+        <li><b style="color:var(--gold-dark)">—</b> Bisa pilih produk dari katalog → “Daftar Penawaran”</li>
+      </ul>
+    </div>
+    <form class="panel" onsubmit="event.preventDefault();sendRFQ()">
+      <div class="row">
+        <div class="field"><label for="rName">Nama / Perusahaan</label><input id="rName" required placeholder="CV Maju Jaya"></div>
+        <div class="field"><label for="rLoc">Lokasi proyek</label><input id="rLoc" required placeholder="Kota / Kecamatan"></div>
+      </div>
+      <div class="field"><label for="rList">Daftar kebutuhan</label><textarea id="rList" rows="4" required placeholder="Contoh: MU 380 100 sak, Gyproc 9mm 80 lembar, Superplank 20cm 50 lembar"></textarea></div>
+      <button class="btn btn-gold" style="width:100%">Kirim Permintaan via WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<section class="section" id="sosial">
+  <div class="container">
+    <div class="section-head">
+      <div><h2>Video Produk &amp; Review dari TikTok @tbandalanbogor</h2><p>Lihat proses oplos mesin tinting, tips bangunan, dan promo etalase resmi kami</p></div>
+      <a class="link-gold" href="#" data-link="tiktok">Tonton di TikTok →</a>
+    </div>
+    <div class="tiktok-tabs" id="tiktokTabs" role="tablist" aria-label="Filter kategori video TikTok">
+      <button type="button" class="tiktok-tab active" data-vcat="all">Semua Video</button>
+      <button type="button" class="tiktok-tab" data-vcat="tinting">Uji Warna Cat</button>
+      <button type="button" class="tiktok-tab" data-vcat="tips">Tips Bangunan</button>
+      <button type="button" class="tiktok-tab" data-vcat="promo">Promo Etalase</button>
+    </div>
+    <div class="tiktok-video-grid" id="social"></div>
+  </div>
+</section>
+
+<section class="section" id="lokasi" style="background:#fff;border-top:1px solid var(--line)">
+  <div class="container loc">
+    <div class="panel">
+      <h3>Kunjungi Toko Kami</h3>
+      <div style="display:flex;align-items:center;gap:8px;margin-top:6px"><span style="color:var(--gold);font-size:1.1rem">★★★★★</span><b>4.8–4.9</b><span style="color:var(--muted)">(Tokopedia & Google)</span></div>
+      <ul class="info-list">
+        <li><b>Alamat:</b> <span id="addr"></span></li>
+        <li><b>Jam Buka:</b> <span id="hours"></span></li>
+        <li><b>WhatsApp:</b> <a href="#" data-link="wa" class="link-gold" id="waDisplay"></a></li>
+      </ul>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn btn-gold" href="#" data-link="maps">Petunjuk Arah</a>
+        <a class="btn btn-wa" href="#" data-link="wa">Chat WhatsApp</a>
+      </div>
+    </div>
+    <div class="map" id="map"></div>
+  </div>
+</section>
+
+<script src="assets/js/products.js?v=4"></script>
+<script src="assets/js/app.js?v=5"></script>
+<script src="assets/js/hero-slider.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="assets/js/nippon-3d.js?v=3"></script>
+<script>
+renderLayout("home");
+
+const CHANNELS = [["wa", "WhatsApp"], ["shopee", "Shopee"], ["lazada", "Lazada"], ["blibli", "Blibli"], ["tokopedia", "Tokopedia"], ["tiktokShop", "TikTok Shop"], ["ig", "Instagram"]];
+$("channelStrip").insertAdjacentHTML("beforeend", CHANNELS.map(([k, label]) => `<a class="chip" href="#" data-link="${k}">${APP_LOGOS[k]}${label}</a>`).join(""));
+bindLinks($("channelStrip"));
+
+$("statProd").textContent = PRODUCTS.length;
+$("statBrand").textContent = new Set(PRODUCTS.map(p => p.brand)).size;
+
+$("cats").innerHTML = CATEGORIES.map(c => `
+  <a class="cat" href="katalog.html?cat=${c.id}"><div class="ico">${c.icon}</div><b>${c.name}</b><small>${PRODUCTS.filter(p => p.cat === c.id).length} produk</small></a>`).join("");
+
+function renderFeatured() { $("featured").innerHTML = FEATURED.map(s => PRODUCTS.find(p => p.slug === s)).filter(Boolean).map(productCard).join(""); }
+window.onQuoteChange = renderFeatured;
+renderFeatured();
+
+$("brands").innerHTML = [...new Set(PRODUCTS.map(p => p.brand))].sort().map(b => `<a href="katalog.html?brand=${encodeURIComponent(b)}">${b}</a>`).join("");
+
+const TIKTOK_VIDEOS = [
+  { cat: "tinting", tag: "🎨 Uji Warna Cat", title: "Proses Oplos Warna Vinilex Original di Mesin Tinting TB Andalan", img: "assets/products/vinilex-5000-new.jpg", link: "tiktokShop" },
+  { cat: "tips", tag: "🏠 Tips Bangunan", title: "Cara Pakai Aquaproof & No Drop di Dak Beton Anti Bocor", img: "assets/products/no-drop-anti-bocor.jpg", link: "tiktok" },
+  { cat: "promo", tag: "🔥 Promo Etalase", title: "Spill Harga Cat Jotun, Dulux & Nippon Termurah Minggu Ini", img: "assets/products/dulux-weathershield-powerflexx.jpg", link: "tiktokShop" },
+  { cat: "tinting", tag: "🎨 Uji Warna Cat", title: "Beda Vinilex Interior vs Weatherbond Max Eksterior", img: "assets/products/nippon-weatherbond-max.jpg", link: "tiktok" },
+  { cat: "tips", tag: "🏠 Tips Bangunan", title: "MU 380 vs Semen Biasa untuk Bata Ringan, Mana Lebih Hemat?", img: "assets/products/mu-380-3911085.webp", link: "tiktok" },
+  { cat: "promo", tag: "🔥 Promo Etalase", title: "Ready Stok Damdex 5L & Cat Semprot Pylox di Keranjang Kuning", img: "assets/products/damdex-5-liter-new.jpg", link: "tiktokShop" }
+];
+
+function renderTikTokVideos(filter = "all") {
+  const list = filter === "all" ? TIKTOK_VIDEOS : TIKTOK_VIDEOS.filter(v => v.cat === filter);
+  $("social").innerHTML = list.map(v => `
+    <article class="video-card">
+      <div class="video-frame" style="--bgimg:url('${v.img}')">
+        <div class="video-play-top">
+          <span class="vid-tag">${v.tag}</span>
+          <span class="vid-play-ico" aria-hidden="true">▶</span>
+        </div>
+        <div class="video-overlay-info">
+          <h4>${v.title}</h4>
+          <a href="#" data-link="${v.link}" class="btn-watch-tt">▶ Tonton di TikTok</a>
+        </div>
+      </div>
+    </article>`).join("");
+  bindLinks($("social"));
+}
+
+document.querySelectorAll("#tiktokTabs .tiktok-tab").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll("#tiktokTabs .tiktok-tab").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    renderTikTokVideos(btn.dataset.vcat);
+  });
+});
+renderTikTokVideos("all");
+
+function tanyaProdukWA(namaProduk) {
+  openWA(`Halo ${CONFIG.storeName}, saya mau tanya stok & harga terbaru untuk produk:\n*${namaProduk}* (lihat dari Katalog Harga Resmi website).`);
+}
+
+$("addr").textContent = CONFIG.address;
+$("hours").textContent = CONFIG.hours;
+$("waDisplay").textContent = CONFIG.phone;
+bindLinks($("lokasi"));
+$("map").innerHTML = `<iframe loading="lazy" title="Lokasi Tb. Andalan" src="https://maps.google.com/maps?q=${encodeURIComponent(CONFIG.mapsQuery)}&z=15&output=embed"></iframe>`;
+
+function calc() {
+  const a = (+$("pl").value || 0) * (+$("lb").value || 0), t = $("calcType").value;
+  let r;
+  if (t === "gypsum") r = `Luas plafon ${a} m² → ± <b>${Math.ceil(a / 2.88 * 1.1)} lembar</b> gypsum 120×240 (+10% cadangan)`;
+  else if (t === "mu380") r = `Dinding ${a} m² → ± <b>${Math.ceil(a / 8)} sak</b> MU 380 / DM-938 (40 kg) & ± <b>${(a * 0.1).toFixed(2)} m³</b> bata ringan 10 cm`;
+  else r = `Luas dak ${a} m² → ± <b>${Math.ceil(a * 1.0)} kg</b> Aquaproof (2 lapis) ≈ ${Math.ceil(a / 20)} pail 20 kg atau ${Math.ceil(a / 4)} kaleng 4 kg`;
+  $("calcResult").innerHTML = r;
+}
+calc();
+
+function sendRFQ() {
+  openWA(`Halo ${CONFIG.storeName}, saya ingin minta penawaran proyek.\n\nNama: ${$("rName").value}\nLokasi: ${$("rLoc").value}\n\nKebutuhan:\n${$("rList").value}`);
+}
+openFromHash();
+</script>
+</body>
+</html>

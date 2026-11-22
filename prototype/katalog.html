@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Katalog Produk — Tb. Andalan Bogor</title>
+<meta name="description" content="Katalog bahan bangunan Tb. Andalan Bogor: semen instan, waterproofing, cat, papan GRC, kalsium silikat, gypsum, dan genteng metal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Slab:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=5">
+</head>
+<body>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="crumb"><a href="index.html">Beranda</a> › Katalog Produk</div>
+    <h1>Katalog <span>Produk</span></h1>
+    <p id="heroSub">Bahan bangunan berkualitas dengan harga grosir</p>
+  </div>
+</section>
+
+<main class="container catalog">
+  <aside class="sidebar" id="sidebar" aria-label="Filter produk">
+    <div class="f-group">
+      <h4>Kategori <button onclick="setCat('')">Reset</button></h4>
+      <div id="fCats"></div>
+    </div>
+    <div class="f-group">
+      <h4>Merek <button onclick="state.brands.clear();apply()">Reset</button></h4>
+      <div class="brands" id="fBrands"></div>
+    </div>
+    <div class="f-group">
+      <h4>Tidak menemukan produk?</h4>
+      <p style="font-size:.88rem;color:var(--muted);margin-bottom:10px">Kami juga menyediakan baja ringan, pipa Wavin, kloset Toho, tangki air, pintu PVC, tripleks & lainnya.</p>
+      <a class="btn btn-wa" style="width:100%;padding:10px" href="#" data-link="wa">Tanya via WhatsApp</a>
+    </div>
+  </aside>
+
+  <section>
+    <div class="cat-tabs" id="catTabs"></div>
+    <div class="toolbar">
+      <div class="cat-search">
+        <svg width="18" height="18" fill="none" stroke="#999" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Cari di katalog…" oninput="state.q=this.value;apply()">
+      </div>
+      <button class="btn btn-ghost filter-toggle" style="padding:10px 16px" onclick="openFilter()">Filter</button>
+      <span class="spacer"></span>
+      <span class="count" id="count"></span>
+      <select id="sort" onchange="state.sort=this.value;apply()" aria-label="Urutkan">
+        <option value="pop">Terpopuler</option>
+        <option value="az">Nama A–Z</option>
+        <option value="za">Nama Z–A</option>
+        <option value="brand">Merek</option>
+      </select>
+    </div>
+    <div class="active-filters" id="af"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+</main>
+
+<script src="assets/js/products.js?v=4"></script>
+<script src="assets/js/app.js?v=5"></script>
+<script>
+renderLayout("katalog");
+
+const params = new URLSearchParams(location.search);
+const state = { cat: params.get("cat") || "", q: params.get("q") || "", brands: new Set(params.getAll("brand")), sort: "pop" };
+$("q").value = state.q;
+document.querySelector('header .search input').value = state.q;
+
+const SYN = { "anti bocor": "waterproofing", "plamir": "acian", "semen": "mortar", "plafon": "gypsum", "lisplank": "plank", "triplek": "board", "genteng": "roof" };
+function matches(p, q) {
+  if (!q) return true;
+  const hay = `${p.name} ${p.brand} ${catName(p.cat)} ${p.desc}`.toLowerCase();
+  return q.toLowerCase().split(/\s+/).every(w => hay.includes(w) || (SYN[w] && hay.includes(SYN[w]))) || (SYN[q.toLowerCase()] && hay.includes(SYN[q.toLowerCase()]));
+}
+
+function setCat(id) { state.cat = state.cat === id ? "" : id; apply(); }
+function toggleBrand(b) { state.brands.has(b) ? state.brands.delete(b) : state.brands.add(b); apply(); }
+function openFilter() { $("sidebar").classList.add("show"); $("overlay").classList.add("show"); }
+
+function apply() {
+  const base = PRODUCTS.filter(p => matches(p, state.q));
+  const inCat = base.filter(p => !state.cat || p.cat === state.cat);
+  let list = inCat.filter(p => !state.brands.size || state.brands.has(p.brand));
+
+  const order = { pop: (a, b) => (FEATURED.includes(b.slug) - FEATURED.includes(a.slug)) || a.name.localeCompare(b.name),
+                  az: (a, b) => a.name.localeCompare(b.name), za: (a, b) => b.name.localeCompare(a.name),
+                  brand: (a, b) => a.brand.localeCompare(b.brand) || a.name.localeCompare(b.name) };
+  list.sort(order[state.sort]);
+
+  // Sidebar: kategori
+  $("fCats").innerHTML = [{ id: "", name: "Semua Produk" }, ...CATEGORIES].map(c => {
+    const n = base.filter(p => !c.id || p.cat === c.id).length;
+    return `<label class="f-opt ${state.cat === c.id ? "on" : ""}"><input type="radio" name="cat" ${state.cat === c.id ? "checked" : ""} onchange="state.cat='${c.id}';apply()"> ${c.name}<span class="n">${n}</span></label>`;
+  }).join("");
+  // Tabs (mobile & desktop quick access)
+  $("catTabs").innerHTML = [{ id: "", name: "Semua" }, ...CATEGORIES].map(c =>
+    `<button class="${state.cat === c.id ? "on" : ""}" onclick="state.cat='${c.id}';apply()">${c.name}</button>`).join("");
+  // Sidebar: merek
+  const brands = [...new Set(inCat.map(p => p.brand))].sort();
+  $("fBrands").innerHTML = brands.map(b => `<label class="f-opt ${state.brands.has(b) ? "on" : ""}"><input type="checkbox" ${state.brands.has(b) ? "checked" : ""} onchange="toggleBrand('${b}')"> ${b}<span class="n">${inCat.filter(p => p.brand === b).length}</span></label>`).join("");
+
+  // Active filter chips
+  const chips = [];
+  if (state.cat) chips.push(`<span class="af">${catName(state.cat)}<button onclick="state.cat='';apply()">×</button></span>`);
+  state.brands.forEach(b => chips.push(`<span class="af">${b}<button onclick="toggleBrand('${b}')">×</button></span>`));
+  if (state.q) chips.push(`<span class="af">"${esc(state.q)}"<button onclick="state.q='';$('q').value='';apply()">×</button></span>`);
+  $("af").innerHTML = chips.join("");
+
+  $("count").innerHTML = `Menampilkan <b>${list.length}</b> dari ${PRODUCTS.length} produk`;
+  $("heroSub").textContent = state.cat ? catName(state.cat) + " — harga grosir untuk toko & kontraktor" : "Bahan bangunan berkualitas dengan harga grosir";
+  $("grid").innerHTML = list.length ? list.map(productCard).join("") :
+    `<div class="empty">Produk tidak ditemukan di katalog online.<br>Stok toko kami lebih lengkap — <a class="link-gold" href="#" onclick="event.preventDefault();openWA('Halo ${CONFIG.storeName}, saya mencari produk: ' + state.q)">tanyakan via WhatsApp →</a></div>`;
+
+  // Sinkron URL agar link katalog bisa dibagikan (mis. ke WA / IG bio)
+  const u = new URLSearchParams();
+  if (state.cat) u.set("cat", state.cat);
+  if (state.q) u.set("q", state.q);
+  state.brands.forEach(b => u.append("brand", b));
+  history.replaceState(null, "", location.pathname + (u.toString() ? "?" + u : "") + location.hash);
+}
+window.onQuoteChange = apply;
+apply();
+openFromHash();
+</script>
+</body>
+</html>
