@@ -3,3 +3,5 @@ Allow: /
 
 Disallow: /assets/js/
 Disallow: /assets/css/
+
+Sitemap: https://tb-andalan-prototype.vercel.app/sitemap.xml
