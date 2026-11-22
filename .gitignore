@@ -12,6 +12,8 @@ desktop.ini
 
 # Dependencies & build/deploy artifacts
 node_modules/
+dist/
+build/
 .vercel/
 
 # Raw source photos in root (already copied to prototype/assets/products/)
