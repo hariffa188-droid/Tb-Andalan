@@ -217,18 +217,21 @@ header{background:var(--dark);position:sticky;top:0;z-index:50;border-bottom:1px
 
 /* Panels / forms */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.two>*,.loc>*,.np3d-studio>*,.hero .container>*{min-width:0}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;min-width:0;max-width:100%}
 .panel h3{font-size:1.3rem;margin-bottom:6px}
 .panel p.sub{color:var(--muted);margin-bottom:18px}
-.field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;min-width:0}
 .field label{font-size:.85rem;font-weight:600}
-.field input,.field select,.field textarea{padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fff;outline:0}
+.field input,.field select,.field textarea{width:100%;max-width:100%;min-width:0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fff;outline:0}
+.field select{text-overflow:ellipsis}
 .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.result{background:#FFF9EA;border:1px dashed var(--gold);border-radius:10px;padding:14px;margin-top:6px;font-weight:500}
+.result{background:#FFF9EA;border:1px dashed var(--gold);border-radius:10px;padding:14px;margin-top:6px;font-weight:500;overflow-wrap:anywhere}
 .why{background:var(--dark);color:#fff;border:0}
 .why ul{list-style:none;display:grid;gap:16px;margin-top:16px}
 .why li{display:flex;gap:14px}
+.why li>div{min-width:0;overflow-wrap:anywhere}
 .why li i{font-style:normal;font-family:"Roboto Slab",serif;font-weight:700;font-size:1rem;color:var(--gold-light);width:46px;height:46px;flex:none;display:grid;place-items:center;border-radius:12px;background:#2c2c2c;border:1px solid #3a3a3a}
 .why li b{color:var(--gold-light)}
 .why li span{display:block;color:#bbb;font-size:.9rem}
